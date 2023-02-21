@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kto jest najlepszą dziewczyną na świecie?</title>
+    <style>
+      html {
+        font-size: 62.5%; /* 1rem = 10px */
+      }
+
+      h1 {
+        font-size: 4rem;
+        text-align: center;
+        margin: 3rem 0;
+        animation: pulse 1s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      button {
+        font-size: 2rem;
+        margin: 3rem auto;
+        display: block;
+        padding: 1.5rem 3rem;
+        border: none;
+        border-radius: 5rem;
+        background-color: #5a5aff;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+        width: 100%;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+      }
+
+      p {
+        font-size: 4rem;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        margin: 3rem 0;
+      }
+
+      p.show {
+        opacity: 1;
+      }
+
+      .dog {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 1rem;
+        transform: rotate(0deg);
+        transition: transform 1s ease-in-out;
+      }
+
+      .dog:hover {
+        transform: rotate(360deg);
+      }
+
+      #dog-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Kto jest najlepszą dziewczyną na świecie?</h1>
+    <button onclick="showResult()">Kliknij mnie</button>
+    <p id="result">TY :3</p>
+    <div id="dog-container">
+      <img class="dog" src="https://images.dog.ceo/breeds/dalmatian/cooper2.jpg" />
+      <img class="dog" src="https://images.dog.ceo/breeds/shiba/shiba-10.jpg" />
+      <img class="dog" src="https://images.unsplash.com/photo-1546527868-ccb7ee7dfa6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
+      <img class="dog" src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" />
+    </div>
+    <script>
+      function showResult() {
+        const button = document.querySelector("button");
+        const result = document.querySelector("#result");
+        const dogs = document.querySelectorAll(".dog");
+
+        button.style.display = "none";
+    result.classList.add("show");
+    dogs.forEach(dog => {
+      dog.style.display = "none";
+    });
+  }
+</script>
+
